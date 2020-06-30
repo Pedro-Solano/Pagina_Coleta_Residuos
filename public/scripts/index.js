@@ -1,7 +1,7 @@
 /* Obs.: querySelector retorna um elemento, enquanto querySelectorAll retorna uma lista, não sendo compatível com EventListener */
 
 
-const buttonSearch = document.querySelector("#page-home main a") /* vai procurar um "a" dentro de "main" de "page-home" */
+const buttonSearch = document.querySelector("#page-home main a") 
 const modal = document.querySelector("#modal")              /* captura o modal */
 const close = document.querySelector("#modal .header a")    /* captura o click no botão close */
 

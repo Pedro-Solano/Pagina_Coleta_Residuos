@@ -2,7 +2,8 @@ function populateUFs(){
         const ufSelect = document.querySelector("select[name=uf]")
 
         fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
-        .then ( res => res.json() )     // Função anônima que retorna res.json. Equivalente a .then( (res) => { return res.json() } )
+        // Função anônima que retorna res.json.
+        .then ( res => res.json() )     
         .then ( states => {
 
             for ( const state of states){
@@ -17,7 +18,7 @@ populateUFs()
 
 function getCities(event) {
     const citySelect = document.querySelector("select[name=city]")
-    const stateInput = document.querySelector("input[name=state]")  //vai ser usado para substituir o código do estado pelo nome do estado
+    const stateInput = document.querySelector("input[name=state]")  // será usado para substituir o código do estado pelo nome do estado
 
     const ufValue = event.target.value              //armazena o valor de select[name=uf] quando o event sofre mudança
 
@@ -27,12 +28,12 @@ function getCities(event) {
 
     const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios` // faz a consulta conforme o ufValue
 
-    citySelect.innerHTML = "<option value>Selecione a Cidade</option>"  // ou citySelect.innerHTML = "". Esvazia a lista de cidades quando altera o estado 
+    citySelect.innerHTML = "<option value>Selecione a Cidade</option>"  // Esvazia a lista de cidades quando altera o estado 
 
     citySelect.disabled = true         //bloqueia o campo após limpar a lista
 
     fetch(url)
-    .then ( res => res.json() )     // Função anônima que retorna res.json. Equivalente a .then( (res) => { return res.json() } )
+    .then ( res => res.json() )     // Função anônima que retorna res.json
     .then ( cities => {
 
         for ( const city of cities){
@@ -69,11 +70,11 @@ function handleSelectedItem(event){
 
     const itemId = itemLi.dataset.id
 
-    /* verificar se existem items selecionados e pegá-los. */
+    /* verificar se existem items selecionados e capturá-los. */
 
-    const alreadySelected = selectedItems.findIndex( item => { /* equivalente à seguinte arrow function: 
-                                                                    const alreadySelected = selectedItems.findIndex( item => item == itemId) */
-        const itemFound = item == itemId                   // condição booleana
+    const alreadySelected = selectedItems.findIndex( item => {  
+                                                                    
+        const itemFound = item == itemId                   
         return itemFound
     })
 
@@ -97,5 +98,5 @@ function handleSelectedItem(event){
 
 //    .querySelector("select[name=uf]")       /* seleciona o campo com nome "uf" */
 //    .addEventListener("change", () => {     /* cria o ouvidor de eventos e uma função anônima, ou arrow function */
-//        console.log("mudei")                /* imprime mudei sempre que detectar mudança */
+//        console.log("mudei")                /* imprime "mudei" sempre que detectar mudança */
 //    })   

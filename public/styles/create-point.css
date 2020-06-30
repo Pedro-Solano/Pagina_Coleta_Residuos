@@ -2,17 +2,17 @@
     width: 90%;
     max-width: 1100px;
 
-    /*alinhamento da caixa pelo lado de fora */
+    /* alinhamento da caixa pelo lado de fora */
 
-    margin: 0 auto;     /*determina margem 0 no top e bottom e automática nas laterais*/
+    margin: 0 auto;     /* determina margem 0 no top e bottom e automática nas laterais*/
 }
 
 #page-create-point header{
     margin: 48px;
 
-    display: flex;      /*permite que cada icone vá para um canto da tela*/
+    display: flex;      /* permite que cada icone vá para um canto da tela*/
     justify-content: space-between;
-    align-items: center;    /*alinha "Ecoleta" com "voltar para home"*/
+    align-items: center;    /* alinha "Ecoleta" com "voltar para home"*/
 
 }
 
@@ -75,7 +75,7 @@ form legend span {      /* Selecione um ou mais... */
 }
 
 form .field {           /* class */
-    flex: 1;            /*?????*/
+    flex: 1;            
                         /*max-width: 200px; define a largura máxima dos campos*/
     display: flex;
     flex-direction: column;
@@ -137,8 +137,8 @@ form button:hover {         /* comportamento quando deslizar o mouse sobre o bot
 }
 
 .items-grid{
-    display: grid;          /*o flex é unidimensional, o grid é multidimensional*/
-    grid-template-columns: 1fr 1fr 1fr;     /*a largura pode ser definida como fração (calculada automaticamente) ou por pixels.
+    display: grid;          /* o flex é unidimensional, o grid é multidimensional*/
+    grid-template-columns: 1fr 1fr 1fr;     /* a largura pode ser definida como fração (calculada automaticamente) ou por pixels.
                                             Ex.: 20 px 200px 200px */
     gap: 16px;              /* faz o distanciamento entre os elementos. Mais rápido que margin*/
 }
