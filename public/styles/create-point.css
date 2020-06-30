@@ -1,0 +1,185 @@
+#page-create-point{
+    width: 90%;
+    max-width: 1100px;
+
+    /*alinhamento da caixa pelo lado de fora */
+
+    margin: 0 auto;     /*determina margem 0 no top e bottom e automática nas laterais*/
+}
+
+#page-create-point header{
+    margin: 48px;
+
+    display: flex;      /*permite que cada icone vá para um canto da tela*/
+    justify-content: space-between;
+    align-items: center;    /*alinha "Ecoleta" com "voltar para home"*/
+
+}
+
+#page-create-point header a{        /*"voltar para home"*/
+    color: var(--title-color);      /*definida no arquivo main.css*/
+    font-weight: bold;
+
+    display: flex;                  /* alinha a setinha e o "voltar para home"*/
+
+    align-items: center;
+}
+
+#page-create-point header a span{   /* setinha ao lado de "voltar para home" */
+    margin-right: 16px;             /* espaço entre a setinha e o "voltar para home" */
+    background-image: url('../extras-aula-1/icones/arrow-left.svg');
+
+    display: flex;
+
+    width: 20px;
+    height: 24px;
+}
+
+form{
+    background-color: white;
+
+    margin: 80px auto;           /*distância para o cabeçalho */
+    padding: 64px;              /*margem entre o texto e as bordas do formulário*/
+
+    border-radius: 8px;         /*arredonda as bordas*/
+
+    max-width: 730px;
+}
+
+form h1 {       /* titulo do formulário*/
+    font-size: 36px;
+}
+
+form fieldset {
+    margin-top: 64px;
+    border: 0;
+}
+
+form legend {
+    margin-bottom: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+form legend h2 {        /* "Dados da entidade"*/
+    font-size: 24px;
+}
+
+form legend span {      /* Selecione um ou mais... */
+    color: var(--title-color);
+    font-size: 14px;
+}
+
+form .field {           /* class */
+    flex: 1;            /*?????*/
+                        /*max-width: 200px; define a largura máxima dos campos*/
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 24px;
+}
+
+form .field-group {
+    display: flex;
+}
+
+form input,
+form select {
+    background-color: #f0f0f5;
+    border: 0;          /* contorno dos campos do formulário */
+
+    padding: 16px 24px;
+    font-size: 16px;    /* tamanho da fonte do campo */ 
+
+    border-radius: 8px;
+                        /* outline: none; destaca o campo selecionado */
+}
+
+form select {       /* configuração para impedir interferências do browser */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+form label {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+form .field-group .field + .field{      /* configura o campo da direita */
+    margin-left: 24px;
+}
+
+form button {           /*cadastrar ponto de coleta */
+    width: 260px;
+    height: 56px;
+
+    background-color: var(--primary-color);
+    border-radius: 8px;
+
+    color: white;       /* cor do texto */
+    font-weight: bold;
+    font-size: 16px;
+
+    border: 0;              /* tira o contorno do botão */
+
+    margin-top: 40px;
+
+    transition: background-color 400ms;      /* delay para que o escurecimento do botão (hover) seja mais natural */
+}
+
+form button:hover {         /* comportamento quando deslizar o mouse sobre o botão */
+    background-color: #2fb86e;
+}
+
+.items-grid{
+    display: grid;          /*o flex é unidimensional, o grid é multidimensional*/
+    grid-template-columns: 1fr 1fr 1fr;     /*a largura pode ser definida como fração (calculada automaticamente) ou por pixels.
+                                            Ex.: 20 px 200px 200px */
+    gap: 16px;              /* faz o distanciamento entre os elementos. Mais rápido que margin*/
+}
+
+.items-grid li{
+    background-color: #f5f5f5;
+    list-style: none;           /* tira os marcadores dos elementos das listas */ 
+
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+
+    height: 180px;              /* altura dos elementos */
+
+    padding: 32px 24px 16px;
+
+    display: flex;
+    flex-direction: column;     /* faz com que a legenda fique abaixo da imagem e não ao lado */
+    align-items: center;
+    justify-content: space-between;     /* distancia verticalmente as imagens das legendas */
+   
+    text-align: center;     /* alinhamento horizontal das legendas */
+
+    cursor: pointer;        /* transforma o curso do mouse em "mãozinha" quando passa sobre oe elementos da lista*/
+}
+
+.items-grid li span{
+    flex: 1;                /* preenche automaticamente o tamanho do span */
+    margin-top: 12px;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--title-color); 
+}
+
+.items-grid li.selected{    /* formatação quando o elemento for selecionado */
+    background: #e1faec;
+    border: 2px solid #34cb79;
+}
+
+.items-grid li img,
+.items-grid li span {
+    pointer-events: none;       /* desabilita o evento de pointer quando clicar na imagem ou no spam */
+}

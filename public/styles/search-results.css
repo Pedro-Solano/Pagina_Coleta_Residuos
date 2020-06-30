@@ -1,0 +1,110 @@
+body{
+    background-color: white;
+}
+
+body::after {       /* cria um pseudoelemento, que não existe no html */
+    content: "";    /* conteúdo vazio */
+    position: absolute;
+    background: #f0f0f5;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    height: 16rem;
+
+    z-index: -1;    /* joga esse elemento para o fundo da tela */
+}
+
+#page-search-results{
+    width: 90%;
+    max-width: 1100px;
+
+    /*alinhamento da caixa pelo lado de fora */
+
+    margin: 0 auto;     /*determina margem 0 no top e bottom e automática nas laterais*/
+}
+
+#page-search-results header{
+    margin: 48px;
+
+    display: flex;      /*permite que cada icone vá para um canto da tela*/
+    justify-content: space-between;
+    align-items: center;    /*alinha "Ecoleta" com "voltar para home"*/
+
+}
+
+#page-search-results header a{        /*"voltar para home"*/
+    color: var(--title-color);      /*definida no arquivo main.css*/
+    font-weight: bold;
+
+    display: flex;                  /* alinha a setinha e o "voltar para home"*/
+
+    align-items: center;
+}
+
+#page-search-results header a span{   /* setinha ao lado de "voltar para home" */
+    margin-right: 16px;             /* espaço entre a setinha e o "voltar para home" */
+    background-image: url('../extras-aula-1/icones/arrow-left.svg');
+
+    display: flex;
+
+    width: 20px;
+    height: 24px;
+}
+
+main {
+    margin: 48px;
+}
+
+main h4 {
+    font-weight: normal;
+    font-family: Roboto, sans-serif;    /* mudou o tipo da font para que aceitasse o negrito em "2 pontos" */
+
+    margin-bottom: 32px;
+}
+
+main .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 24px;
+}
+
+main .card img {
+    width: 100%;
+    height: 150px;
+
+    object-fit: cover;                  /* replica a imagem para preencher o espaço */
+
+    border-radius: 8px 8px 0px 0px;
+}
+
+
+main .card h1 {
+    margin-top: 32px;
+
+    font-size: 36px;
+    line-height: 41px;
+
+    color: #322153;
+}
+
+main .card h3 {
+    margin: 24px 0;
+
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 24px;
+
+    line-height: 34px;
+
+    color: #34cb79;
+}
+
+main .card p {
+    font-size: 16px;
+    line-height: 26px;
+
+    color: #6c6c80;
+}

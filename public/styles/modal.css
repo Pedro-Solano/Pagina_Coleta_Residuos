@@ -1,0 +1,102 @@
+#modal {
+    background-color: #0e0a14ef; /* "ef" é o alfa, ou seja, a transparência da cor */
+
+    height: 100vh;
+    width: 100vw;
+
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 400ms;
+}
+
+#modal.hide {       /* não tem espaço antes do "." porque está informando que modal possui um hide, e não pesquisando por um hide */
+    display: none;
+}
+
+#modal .content {    /* "cidade" */
+    color: white;
+
+    width: 420px;
+}
+
+#modal .header {    /* "pontos de coleta" e "fechar" */ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 48px;
+}
+
+#modal .header a {      /*X e fechar */
+    background-image: url("/extras-aula-1/icones/x.svg");
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+
+    font-size: 0.01px;  /* acessibilidade: para que um leitor de tela consiga identificar */
+}
+
+#modal .header h1 {     /* "pontos de coleta" */
+    color: white;
+
+    font-size: 36px;
+    line-height: 42px;
+}
+
+#modal form label {     /* "cidade" */ 
+    font-size: 14px;
+    line-height: 16px;
+
+    display: block;     /* para conseguir aplicar o margin-botton */
+    margin-bottom: 8px;
+}
+
+#modal form .field {
+    display: flex; 
+}
+
+#modal form input{      /* entrada do formulário */
+    flex: 1; 
+
+    background-color: #f0f0f5;
+
+    border-radius: 8px 0px 0px 8px;
+    border: 0;
+
+    padding: 16px 24px;
+
+    font-size: 16px;
+    color: #6c6c80;
+}
+
+#modal form button {    /* lupa */
+    width: 72px;
+    height: 72px;
+
+    background-color: var(--primary-color);
+
+    border: 0;
+    border-radius: 0px 8px 8px 0px;
+}
+
+#modal form button:hover {
+    background-color: #2fb86e;
+}
+
+/* Isso é para o modal point created */
+
+#modal.point .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modal.point h1 {
+    color: white;
+    margin-top: 32px;
+}

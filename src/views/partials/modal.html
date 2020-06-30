@@ -1,0 +1,21 @@
+<div id="modal" class="hide">    <!-- fundo preto da tela // a classe hide esconde o modal até que seja desabilitado pelo clique-->
+    <div class="content">
+        <div class="header">
+            <h1>Pontos de Coleta</h1>   <!-- Título -->
+            <a href="#">Fechar</a>      <!-- faz href="#" para não precisar recarregar a pág quando fecha o modal -->
+        </div>
+        <form action="/search">                <!-- cria o formulário e define a pág. de destino após a pesquisa -->
+            <label for="search">Cidade</label>  <!-- realizará a busca apenas por cidade -->
+            <div class="search field">
+                <input 
+                type="text"
+                name="search"
+                placeholder="Pesquise por cidade"
+                >
+                <button>
+                    <img src="/extras-aula-1/icones/search.svg" alt="Buscar">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
